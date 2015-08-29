@@ -1,14 +1,13 @@
-﻿using System;
-using System.Linq;
+﻿using System.Linq;
 using System.Threading.Tasks;
 using System.Web;
 using System.Web.Mvc;
+using CombatTrackerServer.Models.Site;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
-using CombatTrackerServer.Models;
 
-namespace CombatTrackerServer.Controllers
+namespace CombatTrackerServer.Controllers.Site
 {
     [Authorize]
     public class ManageController : Controller
