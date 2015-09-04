@@ -1,7 +1,11 @@
-﻿using Microsoft.Owin;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using Microsoft.Owin;
 using Owin;
 
-[assembly: OwinStartupAttribute(typeof(CombatTrackerServer.Startup))]
+[assembly: OwinStartup(typeof(CombatTrackerServer.Startup))]
+
 namespace CombatTrackerServer
 {
     public partial class Startup
