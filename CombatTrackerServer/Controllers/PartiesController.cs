@@ -10,14 +10,14 @@ namespace CombatTrackerServer.Controllers
 {
     public class PartiesController : ApiController
     {
-		Party[] parties = new Party[]
+		PartyModel[] parties = new PartyModel[]
 		{
-			new Party { Id = 1, Name = "Tomato Soup", Category = "Groceries" },
-			new Party { Id = 2, Name = "Yo-yo", Category = "Toys" },
-			new Party { Id = 3, Name = "Hammer", Category = "Hardware" }
+			new PartyModel { Id = 1, Name = "Gurgle's Grumps", Category = "Groceries", Locked = false, JoinedPlayers = 3, MaxPlayers = 8 },
+			new PartyModel { Id = 2, Name = "Lost Crusaders", Category = "Toys", Locked = true, JoinedPlayers = 1, MaxPlayers = 4 },
+			new PartyModel { Id = 3, Name = "The Final Fighters", Category = "Hardware", Locked = false, JoinedPlayers = 5, MaxPlayers = 6 }
 		};
 
-		public IEnumerable<Party> GetAllParties()
+		public IEnumerable<PartyModel> GetAllParties()
 		{
 			return parties;
 		}
