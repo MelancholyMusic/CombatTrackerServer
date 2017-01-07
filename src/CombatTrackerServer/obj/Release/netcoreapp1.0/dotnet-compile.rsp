@@ -13,6 +13,7 @@
 --version:1.0.0.0
 --informational-version:1.0.0
 --target-framework:.NETCoreApp,Version=v1.0
+--reference:C:\Users\fiede\.nuget\packages\BundlerMinifier.Core\2.2.301\lib\netcoreapp1.0\dotnet-bundle.dll
 --reference:C:\Users\fiede\.nuget\packages\Microsoft.ApplicationInsights\2.1.0\lib\dotnet5.4\Microsoft.ApplicationInsights.dll
 --reference:C:\Users\fiede\.nuget\packages\Microsoft.ApplicationInsights.AspNetCore\1.0.2\lib\netstandard1.6\Microsoft.ApplicationInsights.AspNetCore.dll
 --reference:C:\Users\fiede\.nuget\packages\Microsoft.AspNetCore.Antiforgery\1.1.0\lib\netstandard1.3\Microsoft.AspNetCore.Antiforgery.dll
@@ -30,7 +31,7 @@
 --reference:C:\Users\fiede\.nuget\packages\Microsoft.AspNetCore.Diagnostics\1.1.0\lib\netstandard1.3\Microsoft.AspNetCore.Diagnostics.dll
 --reference:C:\Users\fiede\.nuget\packages\Microsoft.AspNetCore.Diagnostics.Abstractions\1.1.0\lib\netstandard1.0\Microsoft.AspNetCore.Diagnostics.Abstractions.dll
 --reference:C:\Users\fiede\.nuget\packages\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore\1.1.0\lib\netstandard1.3\Microsoft.AspNetCore.Diagnostics.EntityFrameworkCore.dll
---reference:C:\Users\fiede\.nuget\packages\Microsoft.AspNetCore.Hosting\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Hosting.dll
+--reference:C:\Users\fiede\.nuget\packages\Microsoft.AspNetCore.Hosting\1.1.0\lib\netstandard1.5\Microsoft.AspNetCore.Hosting.dll
 --reference:C:\Users\fiede\.nuget\packages\Microsoft.AspNetCore.Hosting.Abstractions\1.1.0\lib\netstandard1.3\Microsoft.AspNetCore.Hosting.Abstractions.dll
 --reference:C:\Users\fiede\.nuget\packages\Microsoft.AspNetCore.Hosting.Server.Abstractions\1.1.0\lib\netstandard1.3\Microsoft.AspNetCore.Hosting.Server.Abstractions.dll
 --reference:C:\Users\fiede\.nuget\packages\Microsoft.AspNetCore.Html.Abstractions\1.1.0\lib\netstandard1.0\Microsoft.AspNetCore.Html.Abstractions.dll
@@ -62,7 +63,7 @@
 --reference:C:\Users\fiede\.nuget\packages\Microsoft.AspNetCore.Routing\1.1.0\lib\netstandard1.3\Microsoft.AspNetCore.Routing.dll
 --reference:C:\Users\fiede\.nuget\packages\Microsoft.AspNetCore.Routing.Abstractions\1.1.0\lib\netstandard1.3\Microsoft.AspNetCore.Routing.Abstractions.dll
 --reference:C:\Users\fiede\.nuget\packages\Microsoft.AspNetCore.Server.IISIntegration\1.1.0\lib\netstandard1.3\Microsoft.AspNetCore.Server.IISIntegration.dll
---reference:C:\Users\fiede\.nuget\packages\Microsoft.AspNetCore.Server.Kestrel\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.Server.Kestrel.dll
+--reference:C:\Users\fiede\.nuget\packages\Microsoft.AspNetCore.Server.Kestrel\1.1.0\lib\netstandard1.3\Microsoft.AspNetCore.Server.Kestrel.dll
 --reference:C:\Users\fiede\.nuget\packages\Microsoft.AspNetCore.StaticFiles\1.1.0\lib\netstandard1.3\Microsoft.AspNetCore.StaticFiles.dll
 --reference:C:\Users\fiede\.nuget\packages\Microsoft.AspNetCore.WebSockets\1.0.0\lib\netstandard1.3\Microsoft.AspNetCore.WebSockets.dll
 --reference:C:\Users\fiede\.nuget\packages\Microsoft.AspNetCore.WebUtilities\1.1.0\lib\netstandard1.3\Microsoft.AspNetCore.WebUtilities.dll
@@ -85,14 +86,14 @@
 --reference:C:\Users\fiede\.nuget\packages\Microsoft.EntityFrameworkCore.Design.Core\1.0.0-preview2-final\lib\netstandard1.3\Microsoft.EntityFrameworkCore.Design.Core.dll
 --reference:C:\Users\fiede\.nuget\packages\Microsoft.EntityFrameworkCore.Relational\1.1.0\lib\netstandard1.3\Microsoft.EntityFrameworkCore.Relational.dll
 --reference:C:\Users\fiede\.nuget\packages\Microsoft.EntityFrameworkCore.Relational.Design\1.0.0\lib\netstandard1.3\Microsoft.EntityFrameworkCore.Relational.Design.dll
---reference:C:\Users\fiede\.nuget\packages\Microsoft.EntityFrameworkCore.SqlServer\1.0.0\lib\netstandard1.3\Microsoft.EntityFrameworkCore.SqlServer.dll
+--reference:C:\Users\fiede\.nuget\packages\Microsoft.EntityFrameworkCore.SqlServer\1.1.0\lib\netstandard1.3\Microsoft.EntityFrameworkCore.SqlServer.dll
 --reference:C:\Users\fiede\.nuget\packages\Microsoft.EntityFrameworkCore.Tools\1.0.0-preview2-final\lib\netcoreapp1.0\dotnet-ef.dll
 --reference:C:\Users\fiede\.nuget\packages\Microsoft.Extensions.Caching.Abstractions\1.1.0\lib\netstandard1.0\Microsoft.Extensions.Caching.Abstractions.dll
 --reference:C:\Users\fiede\.nuget\packages\Microsoft.Extensions.Caching.Memory\1.1.0\lib\netstandard1.3\Microsoft.Extensions.Caching.Memory.dll
 --reference:C:\Users\fiede\.nuget\packages\Microsoft.Extensions.CommandLineUtils\1.0.0\lib\netstandard1.3\Microsoft.Extensions.CommandLineUtils.dll
 --reference:C:\Users\fiede\.nuget\packages\Microsoft.Extensions.Configuration\1.1.0\lib\netstandard1.1\Microsoft.Extensions.Configuration.dll
 --reference:C:\Users\fiede\.nuget\packages\Microsoft.Extensions.Configuration.Abstractions\1.1.0\lib\netstandard1.0\Microsoft.Extensions.Configuration.Abstractions.dll
---reference:C:\Users\fiede\.nuget\packages\Microsoft.Extensions.Configuration.EnvironmentVariables\1.0.0\lib\netstandard1.3\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
+--reference:C:\Users\fiede\.nuget\packages\Microsoft.Extensions.Configuration.EnvironmentVariables\1.1.0\lib\netstandard1.3\Microsoft.Extensions.Configuration.EnvironmentVariables.dll
 --reference:C:\Users\fiede\.nuget\packages\Microsoft.Extensions.Configuration.FileExtensions\1.1.0\lib\netstandard1.3\Microsoft.Extensions.Configuration.FileExtensions.dll
 --reference:C:\Users\fiede\.nuget\packages\Microsoft.Extensions.Configuration.Json\1.1.0\lib\netstandard1.3\Microsoft.Extensions.Configuration.Json.dll
 --reference:C:\Users\fiede\.nuget\packages\Microsoft.Extensions.Configuration.UserSecrets\1.1.0\lib\netstandard1.5\Microsoft.Extensions.Configuration.UserSecrets.dll
@@ -143,6 +144,7 @@
 --reference:C:\Users\fiede\.nuget\packages\NuGet.Repositories\3.5.0-beta2-1484\lib\netstandard1.3\NuGet.Repositories.dll
 --reference:C:\Users\fiede\.nuget\packages\NuGet.RuntimeModel\3.5.0-beta2-1484\lib\netstandard1.3\NuGet.RuntimeModel.dll
 --reference:C:\Users\fiede\.nuget\packages\NuGet.Versioning\3.5.0-beta2-1484\lib\netstandard1.0\NuGet.Versioning.dll
+--reference:C:\Users\fiede\.nuget\packages\NUglify\1.5.1\lib\netstandard1.3\NUglify.dll
 --reference:C:\Users\fiede\.nuget\packages\Remotion.Linq\2.1.1\lib\netstandard1.0\Remotion.Linq.dll
 --reference:C:\Users\fiede\.nuget\packages\System.AppContext\4.3.0\ref\netstandard1.6\System.AppContext.dll
 --reference:C:\Users\fiede\.nuget\packages\System.Buffers\4.3.0\lib\netstandard1.1\System.Buffers.dll
@@ -156,7 +158,7 @@
 --reference:C:\Users\fiede\.nuget\packages\System.ComponentModel.TypeConverter\4.3.0\ref\netstandard1.5\System.ComponentModel.TypeConverter.dll
 --reference:C:\Users\fiede\.nuget\packages\System.Console\4.3.0\ref\netstandard1.3\System.Console.dll
 --reference:C:\Users\fiede\.nuget\packages\System.Data.Common\4.3.0\ref\netstandard1.2\System.Data.Common.dll
---reference:C:\Users\fiede\.nuget\packages\System.Data.SqlClient\4.1.0\ref\netstandard1.3\System.Data.SqlClient.dll
+--reference:C:\Users\fiede\.nuget\packages\System.Data.SqlClient\4.3.0\ref\netstandard1.3\System.Data.SqlClient.dll
 --reference:C:\Users\fiede\.nuget\packages\System.Diagnostics.Contracts\4.3.0\ref\netstandard1.0\System.Diagnostics.Contracts.dll
 --reference:C:\Users\fiede\.nuget\packages\System.Diagnostics.Debug\4.3.0\ref\netstandard1.3\System.Diagnostics.Debug.dll
 --reference:C:\Users\fiede\.nuget\packages\System.Diagnostics.DiagnosticSource\4.3.0\lib\netstandard1.3\System.Diagnostics.DiagnosticSource.dll
@@ -182,14 +184,14 @@
 --reference:C:\Users\fiede\.nuget\packages\System.Linq.Parallel\4.0.1\ref\netstandard1.1\System.Linq.Parallel.dll
 --reference:C:\Users\fiede\.nuget\packages\System.Linq.Queryable\4.3.0\ref\netstandard1.0\System.Linq.Queryable.dll
 --reference:C:\Users\fiede\.nuget\packages\System.Net.Http\4.3.0\ref\netstandard1.3\System.Net.Http.dll
---reference:C:\Users\fiede\.nuget\packages\System.Net.NameResolution\4.0.0\ref\netstandard1.3\System.Net.NameResolution.dll
+--reference:C:\Users\fiede\.nuget\packages\System.Net.NameResolution\4.3.0\ref\netstandard1.3\System.Net.NameResolution.dll
 --reference:C:\Users\fiede\.nuget\packages\System.Net.Primitives\4.3.0\ref\netstandard1.3\System.Net.Primitives.dll
 --reference:C:\Users\fiede\.nuget\packages\System.Net.Requests\4.0.11\ref\netstandard1.3\System.Net.Requests.dll
---reference:C:\Users\fiede\.nuget\packages\System.Net.Security\4.0.0\ref\netstandard1.3\System.Net.Security.dll
+--reference:C:\Users\fiede\.nuget\packages\System.Net.Security\4.3.0\ref\netstandard1.3\System.Net.Security.dll
 --reference:C:\Users\fiede\.nuget\packages\System.Net.Sockets\4.3.0\ref\netstandard1.3\System.Net.Sockets.dll
 --reference:C:\Users\fiede\.nuget\packages\System.Net.WebHeaderCollection\4.0.1\ref\netstandard1.3\System.Net.WebHeaderCollection.dll
 --reference:C:\Users\fiede\.nuget\packages\System.Net.WebSockets\4.3.0\ref\netstandard1.3\System.Net.WebSockets.dll
---reference:C:\Users\fiede\.nuget\packages\System.Numerics.Vectors\4.1.1\ref\netstandard1.0\System.Numerics.Vectors.dll
+--reference:C:\Users\fiede\.nuget\packages\System.Numerics.Vectors\4.3.0\ref\netstandard1.0\System.Numerics.Vectors.dll
 --reference:C:\Users\fiede\.nuget\packages\System.ObjectModel\4.3.0\ref\netstandard1.3\System.ObjectModel.dll
 --reference:C:\Users\fiede\.nuget\packages\System.Reflection\4.3.0\ref\netstandard1.5\System.Reflection.dll
 --reference:C:\Users\fiede\.nuget\packages\System.Reflection.DispatchProxy\4.0.1\ref\netstandard1.3\System.Reflection.DispatchProxy.dll
@@ -228,7 +230,7 @@
 --reference:C:\Users\fiede\.nuget\packages\System.Threading.Tasks.Extensions\4.3.0\lib\netstandard1.0\System.Threading.Tasks.Extensions.dll
 --reference:C:\Users\fiede\.nuget\packages\System.Threading.Tasks.Parallel\4.0.1\ref\netstandard1.1\System.Threading.Tasks.Parallel.dll
 --reference:C:\Users\fiede\.nuget\packages\System.Threading.Thread\4.3.0\ref\netstandard1.3\System.Threading.Thread.dll
---reference:C:\Users\fiede\.nuget\packages\System.Threading.ThreadPool\4.0.10\ref\netstandard1.3\System.Threading.ThreadPool.dll
+--reference:C:\Users\fiede\.nuget\packages\System.Threading.ThreadPool\4.3.0\ref\netstandard1.3\System.Threading.ThreadPool.dll
 --reference:C:\Users\fiede\.nuget\packages\System.Threading.Timer\4.3.0\ref\netstandard1.2\System.Threading.Timer.dll
 --reference:C:\Users\fiede\.nuget\packages\System.Xml.ReaderWriter\4.3.0\ref\netstandard1.3\System.Xml.ReaderWriter.dll
 --reference:C:\Users\fiede\.nuget\packages\System.Xml.XDocument\4.3.0\ref\netstandard1.3\System.Xml.XDocument.dll

@@ -11,6 +11,6 @@
     <WebStackScaffolding_DbContextTypeFullName>CombatTrackerServer.Data.ApplicationDbContext</WebStackScaffolding_DbContextTypeFullName>
     <WebStackScaffolding_IsAsyncSelected>False</WebStackScaffolding_IsAsyncSelected>
     <WebStackScaffolding_IsViewGenerationSelected>True</WebStackScaffolding_IsViewGenerationSelected>
-    <NameOfLastUsedPublishProfile>CombatTracker - Web Deploy</NameOfLastUsedPublishProfile>
+    <NameOfLastUsedPublishProfile>CombatTrackerServer20170105013416 - Web Deploy</NameOfLastUsedPublishProfile>
   </PropertyGroup>
 </Project>
