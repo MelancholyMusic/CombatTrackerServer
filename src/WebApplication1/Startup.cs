@@ -9,12 +9,12 @@ using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
-using WebApplication1.Data;
-using WebApplication1.Models;
-using WebApplication1.Services;
+using CombatTrackerServer.Data;
+using CombatTrackerServer.Models;
+using CombatTrackerServer.Services;
 using Microsoft.AspNetCore.Mvc;
 
-namespace WebApplication1
+namespace CombatTrackerServer
 {
     public class Startup
     {

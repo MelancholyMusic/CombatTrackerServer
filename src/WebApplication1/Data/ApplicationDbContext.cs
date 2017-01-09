@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using WebApplication1.Models;
+using CombatTrackerServer.Models;
 
-namespace WebApplication1.Data
+namespace CombatTrackerServer.Data
 {
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {

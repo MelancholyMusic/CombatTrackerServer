@@ -8,11 +8,11 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.Extensions.Logging;
-using WebApplication1.Models;
-using WebApplication1.Models.AccountViewModels;
-using WebApplication1.Services;
+using CombatTrackerServer.Models;
+using CombatTrackerServer.Models.AccountViewModels;
+using CombatTrackerServer.Services;
 
-namespace WebApplication1.Controllers
+namespace CombatTrackerServer.Controllers
 {
     [Authorize]
     public class AccountController : Controller
@@ -85,9 +85,9 @@ namespace WebApplication1.Controllers
             return View(model);
         }
 
-        //
-        // GET: /Account/Register
-        [HttpGet]
+		//
+		// GET: /Account/Register
+		[HttpGet]
         [AllowAnonymous]
         public IActionResult Register(string returnUrl = null)
         {

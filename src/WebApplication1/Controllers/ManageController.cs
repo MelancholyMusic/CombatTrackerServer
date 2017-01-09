@@ -6,11 +6,11 @@ using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
-using WebApplication1.Models;
-using WebApplication1.Models.ManageViewModels;
-using WebApplication1.Services;
+using CombatTrackerServer.Models;
+using CombatTrackerServer.Models.ManageViewModels;
+using CombatTrackerServer.Services;
 
-namespace WebApplication1.Controllers
+namespace CombatTrackerServer.Controllers
 {
     [Authorize]
     public class ManageController : Controller
