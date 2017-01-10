@@ -43,15 +43,34 @@ namespace CombatTrackerServer
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            // Add framework services.
-            services.AddApplicationInsightsTelemetry(Configuration);
+			// Add framework services.
 
-            services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
+			// https://blogs.msdn.microsoft.com/webdev/2016/10/27/bearer-token-authentication-in-asp-net-core/
+			services.AddDbContext<ApplicationDbContext>(options =>
+			{
+				// Configure the context to use Microsoft SQL Server.
+				options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection"));
+
+				// Register the entity sets needed by OpenIddict.
+				// Note: use the generic overload if you need
+				// to replace the default OpenIddict entities.
+				options.UseOpenIddict();
+			});
+
+			services.AddApplicationInsightsTelemetry(Configuration);
 
             services.AddIdentity<ApplicationUser, IdentityRole>()
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddDefaultTokenProviders();
+
+			services.AddOpenIddict()
+				.AddEntityFrameworkCoreStores<ApplicationDbContext>()
+				.AddMvcBinders()
+				.EnableTokenEndpoint("/connect/token")
+				.UseJsonWebTokens()
+				.AllowPasswordFlow()
+				.AddEphemeralSigningKey(); // TODO: Create real signing key
+				//.AddSigningCertificate(jwtSigningCert);
 
 			services.AddMvc(options =>
 			{
@@ -89,18 +108,20 @@ namespace CombatTrackerServer
 
             app.UseIdentity();
 
-			// Add external authentication middleware below. To configure them please see http://go.microsoft.com/fwlink/?LinkID=532715
-			app.UseFacebookAuthentication(new FacebookOptions()
-			{
-				AppId = Configuration["Authentication:Facebook:AppId"],
-				AppSecret = Configuration["Authentication:Facebook:AppSecret"]
-			});
+			app.UseOpenIddict();
 
-			app.UseGoogleAuthentication(new GoogleOptions()
-			{
-				ClientId = Configuration["Authentication:Google:ClientId"],
-				ClientSecret = Configuration["Authentication:Google:ClientSecret"]
-			});
+			// Add external authentication middleware below. To configure them please see http://go.microsoft.com/fwlink/?LinkID=532715
+			//app.UseFacebookAuthentication(new FacebookOptions()
+			//{
+			//	AppId = Configuration["Authentication:Facebook:AppId"],
+			//	AppSecret = Configuration["Authentication:Facebook:AppSecret"]
+			//});
+
+			//app.UseGoogleAuthentication(new GoogleOptions()
+			//{
+			//	ClientId = Configuration["Authentication:Google:ClientId"],
+			//	ClientSecret = Configuration["Authentication:Google:ClientSecret"]
+			//});
 
 			app.UseMvc(routes =>
             {
