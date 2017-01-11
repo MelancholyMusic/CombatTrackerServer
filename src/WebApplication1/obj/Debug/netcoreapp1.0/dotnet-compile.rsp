@@ -13,6 +13,7 @@
 --version:1.0.0.0
 --informational-version:1.0.0
 --target-framework:.NETCoreApp,Version=v1.0
+--reference:C:\Users\fiede\.nuget\packages\AspNet.Security.OAuth.Validation\1.0.0-alpha2-final\lib\netstandard1.3\AspNet.Security.OAuth.Validation.dll
 --reference:C:\Users\fiede\.nuget\packages\AspNet.Security.OpenIdConnect.Extensions\1.0.0-beta7-final\lib\netstandard1.4\AspNet.Security.OpenIdConnect.Extensions.dll
 --reference:C:\Users\fiede\.nuget\packages\AspNet.Security.OpenIdConnect.Primitives\1.0.0-beta7-final\lib\netstandard1.0\AspNet.Security.OpenIdConnect.Primitives.dll
 --reference:C:\Users\fiede\.nuget\packages\AspNet.Security.OpenIdConnect.Server\1.0.0-beta7-final\lib\netstandard1.6\AspNet.Security.OpenIdConnect.Server.dll
@@ -152,11 +153,11 @@
 --reference:C:\Users\fiede\.nuget\packages\NuGet.Repositories\3.5.0-beta2-1484\lib\netstandard1.3\NuGet.Repositories.dll
 --reference:C:\Users\fiede\.nuget\packages\NuGet.RuntimeModel\3.5.0-beta2-1484\lib\netstandard1.3\NuGet.RuntimeModel.dll
 --reference:C:\Users\fiede\.nuget\packages\NuGet.Versioning\3.5.0-beta2-1484\lib\netstandard1.0\NuGet.Versioning.dll
---reference:C:\Users\fiede\.nuget\packages\OpenIddict\1.0.0-beta2-0538\lib\netstandard1.4\OpenIddict.dll
---reference:C:\Users\fiede\.nuget\packages\OpenIddict.Core\1.0.0-beta2-0538\lib\netstandard1.3\OpenIddict.Core.dll
---reference:C:\Users\fiede\.nuget\packages\OpenIddict.EntityFrameworkCore\1.0.0-beta2-0538\lib\netstandard1.3\OpenIddict.EntityFrameworkCore.dll
---reference:C:\Users\fiede\.nuget\packages\OpenIddict.Models\1.0.0-beta2-0538\lib\netstandard1.0\OpenIddict.Models.dll
---reference:C:\Users\fiede\.nuget\packages\OpenIddict.Mvc\1.0.0-beta2-0538\lib\netstandard1.6\OpenIddict.Mvc.dll
+--reference:C:\Users\fiede\.nuget\packages\OpenIddict\1.0.0-beta2-0540\lib\netstandard1.4\OpenIddict.dll
+--reference:C:\Users\fiede\.nuget\packages\OpenIddict.Core\1.0.0-beta2-0540\lib\netstandard1.3\OpenIddict.Core.dll
+--reference:C:\Users\fiede\.nuget\packages\OpenIddict.EntityFrameworkCore\1.0.0-beta2-0540\lib\netstandard1.3\OpenIddict.EntityFrameworkCore.dll
+--reference:C:\Users\fiede\.nuget\packages\OpenIddict.Models\1.0.0-beta2-0540\lib\netstandard1.0\OpenIddict.Models.dll
+--reference:C:\Users\fiede\.nuget\packages\OpenIddict.Mvc\1.0.0-beta2-0540\lib\netstandard1.6\OpenIddict.Mvc.dll
 --reference:C:\Users\fiede\.nuget\packages\Remotion.Linq\2.1.1\lib\netstandard1.0\Remotion.Linq.dll
 --reference:C:\Users\fiede\.nuget\packages\System.AppContext\4.3.0\ref\netstandard1.6\System.AppContext.dll
 --reference:C:\Users\fiede\.nuget\packages\System.Buffers\4.3.0\lib\netstandard1.1\System.Buffers.dll
@@ -254,7 +255,8 @@
 C:\Users\fiede\Desktop\CTServer\src\WebApplication1\Program.cs
 C:\Users\fiede\Desktop\CTServer\src\WebApplication1\Startup.cs
 C:\Users\fiede\Desktop\CTServer\src\WebApplication1\Controllers\AccountController.cs
-C:\Users\fiede\Desktop\CTServer\src\WebApplication1\Controllers\ConnectController.cs
+C:\Users\fiede\Desktop\CTServer\src\WebApplication1\Controllers\ApiController.cs
+C:\Users\fiede\Desktop\CTServer\src\WebApplication1\Controllers\AuthorizationController.cs
 C:\Users\fiede\Desktop\CTServer\src\WebApplication1\Controllers\HomeController.cs
 C:\Users\fiede\Desktop\CTServer\src\WebApplication1\Controllers\ManageController.cs
 C:\Users\fiede\Desktop\CTServer\src\WebApplication1\Data\ApplicationDbContext.cs

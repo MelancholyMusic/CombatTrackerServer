@@ -2,6 +2,7 @@ using AspNet.Security.OpenIdConnect.Extensions;
 using AspNet.Security.OpenIdConnect.Primitives;
 using AspNet.Security.OpenIdConnect.Server;
 using CombatTrackerServer.Models;
+using CombatTrackerServer.Models.AccountViewModels;
 using Microsoft.AspNetCore.Authentication;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http.Authentication;
@@ -13,7 +14,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace WebApplication1.Controllers
+namespace CombatTrackerServer.Controllers
 {
 	[Authorize]
 	public class AuthorizationController : Controller
@@ -30,6 +31,31 @@ namespace WebApplication1.Controllers
 			_applicationManager = applicationManager;
 			_signInManager = signInManager;
 			_userManager = userManager;
+		}
+
+		[HttpPost("~/api/register")]
+		[AllowAnonymous]
+		public async Task<IActionResult> Register(RegisterViewModel model, string returnUrl = null)
+		{
+			ViewData["ReturnUrl"] = returnUrl;
+			if(ModelState.IsValid)
+			{
+				var user = new ApplicationUser { UserName = model.Email, Email = model.Email };
+				var result = await _userManager.CreateAsync(user, model.Password);
+				if(result.Succeeded)
+				{
+					// For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=532713
+					// Send an email with this link
+					//var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
+					//var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: HttpContext.Request.Scheme);
+					//await _emailSender.SendEmailAsync(model.Email, "Confirm your account",
+					//    $"Please confirm your account by clicking this link: <a href='{callbackUrl}'>link</a>");
+					return Ok();
+				}
+			}
+
+			// If we got this far, something failed, redisplay form
+			return BadRequest("Unable to register");
 		}
 
 		[HttpPost("~/connect/token"), Produces("application/json")]
@@ -112,12 +138,6 @@ namespace WebApplication1.Controllers
 			var ticket = await CreateTicketAsync(request, user);
 
 			return SignIn(ticket.Principal, ticket.Properties, ticket.AuthenticationScheme);
-		}
-
-		[HttpGet("~/api/test")]
-		public IActionResult Test()
-		{
-			return Ok("You're authorized!");
 		}
 
 		private async Task<AuthenticationTicket> CreateTicketAsync(OpenIdConnectRequest request, ApplicationUser user)

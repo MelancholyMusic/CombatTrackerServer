@@ -49,7 +49,8 @@
 		"Microsoft.AspNetCore.Authentication.Google": "1.1.0",
 		"OpenIddict": "1.0.0-*",
 		"OpenIddict.EntityFrameworkCore": "1.0.0-*",
-		"OpenIddict.Mvc": "1.0.0-*"
+		"OpenIddict.Mvc": "1.0.0-*",
+		"AspNet.Security.OAuth.Validation": "1.0.0-alpha2-final"
 	},
 
   "tools": {
