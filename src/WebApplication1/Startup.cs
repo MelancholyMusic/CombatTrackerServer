@@ -9,6 +9,7 @@ using CombatTrackerServer.Data;
 using CombatTrackerServer.Models;
 using CombatTrackerServer.Services;
 using Microsoft.AspNetCore.Mvc;
+using CombatTrackerServer.Models.MongoDB;
 
 namespace CombatTrackerServer
 {
@@ -73,9 +74,14 @@ namespace CombatTrackerServer
 				options.Filters.Add(new RequireHttpsAttribute());
 			});
 
+			services.AddLogging();
+
+			services.AddSwaggerGen();
+
 			// Add application services.
 			services.AddTransient<IEmailSender, AuthMessageSender>();
 			services.AddTransient<ISmsSender, AuthMessageSender>();
+			services.AddTransient<MongoDBDataAccess>();
 		}
 
 		// This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -124,6 +130,9 @@ namespace CombatTrackerServer
 					name: "default",
 					template: "{controller=Home}/{action=Index}/{id?}");
 			});
+
+			app.UseSwagger();
+			app.UseSwaggerUi();
 		}
 	}
 }
