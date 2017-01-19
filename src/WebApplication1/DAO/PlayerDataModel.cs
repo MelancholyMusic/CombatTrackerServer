@@ -15,7 +15,7 @@ namespace CombatTrackerServer.Models
 
 		public PlayerDataModel()
 		{
-
+			Characters = new BsonArray();
 		}
 
 		public PlayerDataModel(BsonDocument doc)

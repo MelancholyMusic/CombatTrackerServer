@@ -10,6 +10,7 @@ using CombatTrackerServer.Models;
 using CombatTrackerServer.Services;
 using Microsoft.AspNetCore.Mvc;
 using CombatTrackerServer.Models.MongoDB;
+using CombatTrackerServer.Net;
 
 namespace CombatTrackerServer
 {
@@ -68,11 +69,7 @@ namespace CombatTrackerServer
 				.AddEphemeralSigningKey(); // TODO: Create real signing key
 										   //.AddSigningCertificate(jwtSigningCert);
 
-			services.AddMvc(options =>
-			{
-				options.SslPort = 44354;
-				options.Filters.Add(new RequireHttpsAttribute());
-			});
+			services.AddMvc();
 
 			services.AddLogging();
 
@@ -133,6 +130,8 @@ namespace CombatTrackerServer
 
 			app.UseSwagger();
 			app.UseSwaggerUi();
+
+			app.Map("/echo", SocketHandler.Map);
 		}
 	}
 }

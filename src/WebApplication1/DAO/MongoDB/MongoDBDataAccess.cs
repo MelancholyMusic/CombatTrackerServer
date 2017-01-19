@@ -12,8 +12,8 @@ namespace CombatTrackerServer.Models.MongoDB
 
 		public MongoDBDataAccess()
 		{
-			_client = new MongoClient("mongodb://localhost:27017");
-			_db = _client.GetDatabase("PlayerDB");
+			_client = new MongoClient("mongodb://98.202.255.132:27017/:27017");
+			_db = _client.GetDatabase("CTData");
 			_collection = _db.GetCollection<BsonDocument>("PlayerData");
 		}
 

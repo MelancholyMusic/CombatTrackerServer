@@ -1,7 +1,7 @@
 {
   "runtimeTarget": {
     "name": ".NETCoreApp,Version=v1.0",
-    "signature": "1d7ad0779651b55c0cd55a1cb244c28b4e4b9b8c"
+    "signature": "5c619c51feaae36aa40eda75ccda9f37a8a9ecc2"
   },
   "compilationOptions": {
     "defines": [
@@ -43,7 +43,8 @@
           "OpenIddict.Mvc": "1.0.0-beta2-0540",
           "AspNet.Security.OAuth.Validation": "1.0.0-alpha2-final",
           "mongocsharpdriver": "2.4.1",
-          "Swashbuckle": "6.0.0-beta902"
+          "Swashbuckle": "6.0.0-beta902",
+          "Microsoft.AspNetCore.WebSockets.Server": "0.1.0"
         },
         "runtime": {
           "WebApplication1.dll": {}
@@ -914,6 +915,42 @@
         },
         "compile": {
           "lib/netstandard1.3/Microsoft.AspNetCore.StaticFiles.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.WebSockets.Protocol/0.1.0": {
+        "dependencies": {
+          "System.Diagnostics.Contracts": "4.3.0",
+          "System.Globalization": "4.3.0",
+          "System.IO": "4.3.0",
+          "System.Linq": "4.3.0",
+          "System.Net.WebSockets": "4.3.0",
+          "System.Resources.ResourceManager": "4.3.0",
+          "System.Runtime.Extensions": "4.3.0",
+          "System.Runtime.InteropServices": "4.3.0",
+          "System.Security.Cryptography.Algorithms": "4.3.0",
+          "System.Text.Encoding.Extensions": "4.3.0",
+          "System.Threading": "4.3.0",
+          "System.Threading.Tasks": "4.3.0",
+          "System.Threading.Timer": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.AspNetCore.WebSockets.Protocol.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/Microsoft.AspNetCore.WebSockets.Protocol.dll": {}
+        }
+      },
+      "Microsoft.AspNetCore.WebSockets.Server/0.1.0": {
+        "dependencies": {
+          "Microsoft.AspNetCore.Http.Extensions": "1.1.0",
+          "Microsoft.AspNetCore.WebSockets.Protocol": "0.1.0",
+          "Microsoft.Extensions.Options": "1.1.0"
+        },
+        "runtime": {
+          "lib/netstandard1.3/Microsoft.AspNetCore.WebSockets.Server.dll": {}
+        },
+        "compile": {
+          "lib/netstandard1.3/Microsoft.AspNetCore.WebSockets.Server.dll": {}
         }
       },
       "Microsoft.AspNetCore.WebUtilities/1.1.0": {
@@ -4719,6 +4756,16 @@
       "type": "package",
       "serviceable": true,
       "sha512": "sha512-pXiUBJtpO0fIlGEg/ESykhbIZ2+I+9Y+3qXzN19zZDDF+tD88eATg3A5MHMXu/VmqaROLfvpGJmJ6uOLUGsBVQ=="
+    },
+    "Microsoft.AspNetCore.WebSockets.Protocol/0.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-0xtWJEnz0W6d4eBnLlG6dujOqsCz4qu5y/49HeFtizZPYp1keKXNxCew2r2Pn7M2qRYZ4jUiGPCQktp6mL6DAA=="
+    },
+    "Microsoft.AspNetCore.WebSockets.Server/0.1.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-3+78/xYu9BQAqqoAypwCOxb9APW1ht5eOQEgJos7+2k+tdzsR+HHcjI//oI7hYYiGmBIR7pBYV4y/2pU9Ne1FA=="
     },
     "Microsoft.AspNetCore.WebUtilities/1.1.0": {
       "type": "package",

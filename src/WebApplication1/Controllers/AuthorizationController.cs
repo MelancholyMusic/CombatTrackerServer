@@ -52,10 +52,14 @@ namespace CombatTrackerServer.Controllers
 					//    $"Please confirm your account by clicking this link: <a href='{callbackUrl}'>link</a>");
 					return Ok();
 				}
+				else
+				{
+					return BadRequest(result.Errors.ElementAt(0).Code);
+				}
 			}
 
 			// If we got this far, something failed, redisplay form
-			return BadRequest("Unable to register");
+			return BadRequest(ModelState.Values.ElementAt(0).Errors[0].ErrorMessage);
 		}
 
 		[HttpPost("~/connect/token"), Produces("application/json")]
