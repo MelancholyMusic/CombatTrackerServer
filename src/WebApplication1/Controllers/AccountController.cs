@@ -11,6 +11,7 @@ using Microsoft.Extensions.Logging;
 using CombatTrackerServer.Models;
 using CombatTrackerServer.Models.AccountViewModels;
 using CombatTrackerServer.Services;
+using CombatTrackerServer.Models.MongoDB;
 
 namespace CombatTrackerServer.Controllers
 {
@@ -22,19 +23,22 @@ namespace CombatTrackerServer.Controllers
 		private readonly IEmailSender _emailSender;
 		private readonly ISmsSender _smsSender;
 		private readonly ILogger _logger;
+		private readonly MongoDBDataAccess _mongo;
 
 		public AccountController(
 			UserManager<ApplicationUser> userManager,
 			SignInManager<ApplicationUser> signInManager,
 			IEmailSender emailSender,
 			ISmsSender smsSender,
-			ILoggerFactory loggerFactory)
+			ILoggerFactory loggerFactory,
+			MongoDBDataAccess mongo)
 		{
 			_userManager = userManager;
 			_signInManager = signInManager;
 			_emailSender = emailSender;
 			_smsSender = smsSender;
 			_logger = loggerFactory.CreateLogger<AccountController>();
+			_mongo = mongo;
 		}
 
 		//
@@ -109,6 +113,8 @@ namespace CombatTrackerServer.Controllers
 				var result = await _userManager.CreateAsync(user, model.Password);
 				if(result.Succeeded)
 				{
+					await _mongo.CreatePlayerData(new PlayerDataModel { UserId = user.Id });
+
 					// For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=532713
 					// Send an email with this link
 					//var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
@@ -122,9 +128,9 @@ namespace CombatTrackerServer.Controllers
 				AddErrors(result);
 			}
 
-			// If we got this far, something failed, redisplay form
-			return View(model);
-		}
+            // If we got this far, something failed, redisplay form
+            return View(model);
+        }
 
 		//
 		// POST: /Account/LogOff
