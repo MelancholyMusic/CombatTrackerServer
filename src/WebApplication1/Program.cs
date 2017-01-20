@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.Configuration;
 
 namespace CombatTrackerServer
 {
@@ -11,6 +12,10 @@ namespace CombatTrackerServer
     {
         public static void Main(string[] args)
         {
+			var configuration = new ConfigurationBuilder()
+				.AddCommandLine(args)
+				.Build();
+
             var host = new WebHostBuilder()
 				.CaptureStartupErrors(true)
 				.UseSetting("detailedErrors", "true")
