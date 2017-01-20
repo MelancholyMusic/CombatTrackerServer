@@ -20,7 +20,8 @@ namespace CombatTrackerServer
 				.CaptureStartupErrors(true)
 				.UseSetting("detailedErrors", "true")
 				.UseKestrel()
-                .UseContentRoot(Directory.GetCurrentDirectory())
+				.UseUrls("http://0.0.0.0:5000")
+				.UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
                 .Build();
