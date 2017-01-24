@@ -62,6 +62,7 @@ namespace CombatTrackerServer
 				.AddDefaultTokenProviders();
 
 			services.AddOpenIddict()
+				.DisableHttpsRequirement()
 				.AddEntityFrameworkCoreStores<ApplicationDbContext>()
 				.AddMvcBinders()
 				.EnableTokenEndpoint("/connect/token")

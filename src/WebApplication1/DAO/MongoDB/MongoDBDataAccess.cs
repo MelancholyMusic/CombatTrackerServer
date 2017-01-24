@@ -35,10 +35,19 @@ namespace CombatTrackerServer.Models.MongoDB
 			return "";
 		}
 
-		public async Task<BsonDocument> GetPlayerData(string id)
+		public async Task<string> GetPlayerData(string id)
 		{
 			FilterDefinition<BsonDocument> filter = Builders<BsonDocument>.Filter.Eq("userId", id);
-			return await _collection.Find(filter).FirstAsync();
+			BsonDocument pd = await _collection.Find(filter).FirstAsync();
+			pd.Remove("_id");
+			pd.Remove("userId");
+			return pd.ToJson();
+		}
+
+		public async Task<ReplaceOneResult> ReplacePlayerData(string id, string replacementData)
+		{
+			FilterDefinition<BsonDocument> filter = Builders<BsonDocument>.Filter.Eq("userId", id);
+			return await _collection.ReplaceOneAsync(filter, replacementData.ToBsonDocument());
 		}
 
 		public async Task CreatePlayerData(PlayerDataModel pd)

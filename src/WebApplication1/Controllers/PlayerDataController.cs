@@ -1,34 +1,67 @@
 using CombatTrackerServer.Models;
+using CombatTrackerServer.Models.DAOModels;
 using CombatTrackerServer.Models.MongoDB;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using MongoDB.Bson;
+using MongoDB.Driver;
+using System.Linq;
 using System.Threading.Tasks;
 
 namespace CombatTrackerServer.Controllers
 {
 	[Authorize]
     [Produces("application/json")]
-    public class CharactersController : Controller
+    public class PlayerDataController : Controller
     {
 		private readonly MongoDBDataAccess _mongo;
 		private readonly UserManager<ApplicationUser> _userManager;
 
-		public CharactersController(MongoDBDataAccess mongo, UserManager<ApplicationUser> userManager)
+		public PlayerDataController(MongoDBDataAccess mongo, UserManager<ApplicationUser> userManager)
 		{
 			_mongo = mongo;
 			_userManager = userManager;
 		}
 
-		[HttpGet("api/characters/")]
+		[HttpGet("api/playerdata")]
+		public async Task<string> PlayerData()
+		{
+			ApplicationUser user = await _userManager.FindByNameAsync(User.Identity.Name);
+			return await _mongo.GetPlayerData(user.Id);
+		}
+
+		[HttpPost("api/playerdata")]
+		public async Task<IActionResult> PlayerData(PlayerDataReplaceModel model)
+		{
+			if(ModelState.IsValid)
+			{
+				ApplicationUser user = await _userManager.FindByNameAsync(User.Identity.Name);
+				ReplaceOneResult result = await _mongo.ReplacePlayerData(user.Id, "");
+
+				if(result.IsAcknowledged)
+				{
+					return Ok();
+				}
+				else
+				{
+					return BadRequest();
+				}
+			}
+			else
+			{
+				return BadRequest(ModelState.Values.ElementAt(0).Errors[0].ErrorMessage);
+			}
+		}
+
+		[HttpGet("api/playerdata/characters/")]
 		public async Task<string> Characters()
 		{
 			ApplicationUser user = await _userManager.FindByNameAsync(User.Identity.Name);
 			return await _mongo.GetCharacters(user.Id);
 		}
 
-		[HttpGet("api/characters/{id}")]
+		[HttpGet("api/playerdata/characters/{id}")]
 		public async Task<string> Character(int id)
 		{
 			ApplicationUser user = await _userManager.FindByNameAsync(User.Identity.Name);
