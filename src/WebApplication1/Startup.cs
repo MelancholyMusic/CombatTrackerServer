@@ -11,6 +11,9 @@ using CombatTrackerServer.Services;
 using Microsoft.AspNetCore.Mvc;
 using CombatTrackerServer.Models.MongoDB;
 using CombatTrackerServer.Net;
+using System.Reflection;
+using System.Security.Cryptography.X509Certificates;
+using System.IO;
 
 namespace CombatTrackerServer
 {
@@ -41,9 +44,6 @@ namespace CombatTrackerServer
 		// This method gets called by the runtime. Use this method to add services to the container.
 		public void ConfigureServices(IServiceCollection services)
 		{
-			// Add framework services.
-
-			// https://blogs.msdn.microsoft.com/webdev/2016/10/27/bearer-token-authentication-in-asp-net-core/
 			services.AddDbContext<ApplicationDbContext>(options =>
 			{
 				// Configure the context to use Microsoft SQL Server.
@@ -67,8 +67,9 @@ namespace CombatTrackerServer
 				.AddMvcBinders()
 				.EnableTokenEndpoint("/connect/token")
 				.AllowPasswordFlow()
-				.AddEphemeralSigningKey(); // TODO: Create real signing key
-										   //.AddSigningCertificate(jwtSigningCert);
+				.AllowRefreshTokenFlow()
+				.AddSigningCertificate(new X509Certificate2(Directory.GetCurrentDirectory() + "\\CombatTrackerServer.Certificate.pfx", "bM17gLQm6h16"));
+				//.AddSigningCertificate(jwtSigningCert);
 
 			services.AddMvc();
 
@@ -106,8 +107,8 @@ namespace CombatTrackerServer
 			app.UseStaticFiles();
 
 			app.UseIdentity();
-			app.UseOAuthValidation();
 			app.UseOpenIddict();
+			app.UseOAuthValidation();
 
 			// Add external authentication middleware below. To configure them please see http://go.microsoft.com/fwlink/?LinkID=532715
 			//app.UseFacebookAuthentication(new FacebookOptions()
